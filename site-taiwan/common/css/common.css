@@ -1,0 +1,917 @@
+@charset "utf-8";
+
+/* ------------------ページ目次----------------------
+共通：~
+ローディング：~
+背景画像：~
+PCメニュー非表示設定：~
+SPメニューボタン :~
+下矢印 :~
+
+main:~
+
+footer:~
+
+----------------------------------------------------------------*/
+
+
+/* ----------------------------------------------------
+共通 
+---------------------------------------------------------*/
+
+
+:root {
+  --rectangle1-: #0180BE;
+  --rectangle2-: #007AB7;
+  --rectangle3-: #DA5019;
+  --rectangle4-: #000000;
+  --rectangle5-: #F4F4F4;
+  --rectangle6-: #FFFFFF;
+  --rectangle7-: #EDA184;
+  --rectangle9-: #1F91BE;
+  --rectangle11-: #6CBAD8;
+  --rectangl10-: #FBE481;
+  --rectangle12-: #64C99B;
+  --rectangle8-: #D9D9D9;
+
+  --font-famiry-: 'Zen Kaku Gothic New', sans-serif;
+  /* -- 【memo】1rem=16pxです -- */
+  --font-h2-: 24px;
+  --font-h3-: 20px;
+  --font-h4-: 32px;
+  /* -- ↑tainan_Gourmet -- */
+  --font-h5-: 14px;
+  --font-text-: 12px;
+  --font-mini-: 10px;
+  --font-standard-: 16px;
+  /* --ﾌｫﾝﾄｻｲｽﾞの入力例--
+    -----12pxを指定したいとき-----
+     font-size: var(--font-text-);
+     */
+
+  /* PC用font-size追加 */
+  --font-pcTitle-: 48px;
+  --font-pcText-: 18px;
+  --font-pcminTitle-: 40px;
+  /*6/15追加分*/
+}
+
+
+html {
+  font-family: var(--font-famiry-);
+
+}
+
+body {
+  font-size: var(--font-standard-);
+  background-color: var(--rectangle5-);
+}
+
+
+img {
+  width: 100%;
+  image-rendering: pixelated;
+  /*画像パキッとさせる*/
+  object-fit: cover;
+  /* 画像潰れないように */
+}
+
+/* ここ後で伝える */
+a {
+  cursor: pointer;
+}
+
+/* --------------------------------
+ﾌｫﾝﾄ設定
+------------------------------ */
+h2 {
+  font-size: var(--font-h2-);
+}
+
+h3 {
+  font-size: var(--font-h3-);
+}
+
+h4 {
+  font-size: var(--font-h4-);
+}
+
+h5 {
+  font-size: var(--font-h5-);
+}
+
+.text12 {
+  font-size: var(--font-text-);
+}
+
+.textMini {
+  font-size: var(--font-mini-);
+}
+
+/* ----------------------------------------
+ローディング 
+------------------------------------------*/
+
+.loading {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: var(--rectangle1-);
+}
+
+.loading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+
+.loading .circle {
+  display: block;
+  position: relative;
+  top: calc(50% - 20px);
+  width: 120px;
+  margin: 0 auto;
+  animation: loading 1200ms linear 0ms infinite normal both;
+}
+
+@keyframes loading {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/*-----------------------------------------------
+ 背景画像 
+ ----------------------------------------------*/
+header {
+  height: 812px;
+  background-size: cover;
+  position: relative;
+}
+
+.mv {
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.logo-tilte {
+  width: max-content;
+}
+
+
+/* --------------------------------
+PCメニュー非表示設定
+------------------------------ */
+
+.pc_nav {
+  display: none;
+}
+
+
+/* -------------------------------------------------------
+メニューボタン :他ページ共通
+--------------------------------------------------------*/
+.nav_bar {
+  display: flex;
+  justify-content: end;
+  /* ↓他ページのヘッダー */
+  /* justify-content: space-between; */
+
+}
+
+/* ------top以外の他ページロゴ ------------*/
+.header_logo {
+  width: 111px;
+  height: 45px;
+  margin: 22px 10px;
+  /*ロゴ位置調節*/
+}
+
+
+/*-----------------------------------------------
+ ハンバーガーボタン
+ ------------------------------------------------ */
+.menu_bt_container {
+  width: 64px;
+  height: 64px;
+  z-index: 900;
+  position: relative;
+  /* ハンバーガーメニュー固定記述ここから */
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  /* ここまで、やめたい場合は↑コメントにする */
+}
+
+.menu_bt_container img {
+  position: absolute;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------
+ハンバーガーメニュー
+--------------------------------------------------------------------- */
+.nav_content {
+  position: fixed;
+  right: -100%;
+  /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+  top: 0;
+  width: 225px;
+  /* 出てくるスライドメニューの幅 */
+  height: 100%;
+  background: #333333;
+  transition: all 0.5s;
+  z-index: 200;
+}
+
+/*ハンバーガーがクリックされたら右からスライド*/
+.open .nav_content {
+  right: 0;
+}
+
+/* メニュー画面入れ替え */
+.menu_close {
+  opacity: 1;
+
+}
+
+.menu_close.active {
+  opacity: 0;
+
+}
+
+.menu_open {
+  opacity: 0;
+}
+
+.menu_open.active {
+  opacity: 1;
+
+  width: 64px;
+}
+
+
+
+/*------------------------------------- 
+ハンバーガーメニューの中
+---------------------------------------- */
+.logo {
+  width: 100px;
+  height: 40px;
+}
+
+/* テキスト中央寄せ */
+
+.btn_area {
+  text-align: center;
+}
+
+
+/* アイコン幅調節 */
+.icon_area {
+  display: flex;
+  justify-content: center;
+}
+
+.icon_area img {
+  padding: 40px 7px;
+}
+
+/* メニュー内文字 部分*/
+.nav_list {
+  margin: 88px 40px 40px;
+  color: #fff;
+  font-size: var(--font-h2-);
+  font-weight: bold;
+}
+
+.nav_item {
+  margin-bottom: 27px;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+}
+
+/*------------------------------------------------------------------
+ 背景テキスト
+ ------------------------------------------------------------------- */
+.tilte_text {
+  color: var(--rectangle6-);
+  position: absolute;
+  /* ここからはそれぞれのcssでテキスト位置設定必要 */
+  /* bottom: 68px;
+  right: 20px; */
+  /* ---ここまで---- これは台北の場合後で消す */
+}
+
+.tilte_text>p {
+  font-size: var(--font-h5-);
+  width: 247px;
+  text-align: center;
+  color: var(--rectangle6-);
+  line-height: 20px;
+}
+
+
+/*------------------------------------------------
+下矢印 
+-----------------------------------------------*/
+.down_button {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  left: 50%;
+  bottom: -5%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+/* ----------------------ここまで共通ヘッダー要素--------------- */
+
+/* ---------------------------
+パンくず
+ ---------------------------*/
+.breadcrumb {
+  /* 背景色は各ページで設定 */
+  /* ----------------------------- */
+  list-style: none;
+  padding: 14px 24px;
+  /* 背景色の幅を設定 */
+}
+/* ----------パンくず---------------*/
+
+.breadcrumb {
+  /* 背景色は各ページで設定 */
+  /* ----------------------------- */
+  list-style: none;
+  padding: 14px 24px;
+  /* 背景色の幅を設定 */
+}
+
+
+.breadcrumb li {
+  display: inline;
+  /*横に並ぶように*/
+  font-size: var(--font-h3-);
+  /* position: relative; */
+}
+
+.breadcrumb li:after {
+  /* >を表示*/
+  content: '＞';
+  /* position: absolute; */
+  color: #555;
+}
+
+.breadcrumb li:last-child:after {
+  content: '';
+}
+
+.breadcrumb li a {
+  color: #6C6565;
+  margin: 0 -4px;
+  /*＞の位置調節*/
+}
+
+.breadcrumb li a:hover {
+  text-decoration: underline;
+}
+
+/* ---------------------------
+　↓★ここからtutti追加部分
+ ---------------------------*/
+/* ----------------------ここからmain部分--------------- */
+
+/* --------------------------------
+main部分幅、左右余白設定
+------------------------------ */
+/* main {
+  width: 100vw;
+  overflow-x: hidden;
+} */
+
+main section {
+  /* paddingだとPCにしたときに余白がついてしまうのでmarginに修正 */
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* ---------------------------
+小見出し部分
+ ---------------------------*/
+.title {
+  text-align: center;
+  height: 85px;
+  background: url(../image/title_img.svg) no-repeat center bottom;
+  margin-top: 20px;
+  /*合うように調節してしまったため要相談*/
+}
+
+.title h2 {
+  letter-spacing: 0px;
+  line-height: 36px;
+  font-family: var(--font-famiry-);
+  /* ---↓20pxの設定--- */
+  /* font-size: var(--font-h3-); */
+}
+
+.subtitle {
+  font-size: var(--font-standard-);
+  /* margin-top: 5px; */
+  /* ↑調節のため隠す */
+}
+
+
+/* ---------------------------
+margin調整用
+ ---------------------------*/
+.marginBtm5 {
+  margin-bottom: 5px;
+}
+
+.marginBtm10 {
+  margin-bottom: 10px;
+}
+
+.marginBtm15 {
+  margin-bottom: 15px;
+}
+
+.marginBtm20 {
+  margin-bottom: 20px;
+}
+
+.marginBtm25 {
+  margin-bottom: 25px;
+}
+
+.marginBtm30 {
+  margin-bottom: 30px;
+}
+
+.marginBtm35 {
+  margin-bottom: 35px;
+}
+
+.marginBtm40 {
+  margin-bottom: 40px;
+}
+
+.marginBtm45 {
+  margin-bottom: 45px;
+}
+
+.marginBtm50 {
+  margin-bottom: 50px;
+}
+
+/* ---------------------------
+　横棒
+ ---------------------------*/
+.textBorder {
+  border-top: 1px solid;
+  margin: 0 auto;
+  /*元々上下10px余白。しかしずれるため修正*/
+  width: 220px;
+}
+
+.border_pc {
+  display: none;
+}
+
+/* ---------------------------
+　テキスト表示スペース
+ ---------------------------*/
+.textContainer {
+  width: 100%;
+  text-align: center;
+  padding-left: 58px;
+  padding-right: 58px;
+}
+
+/* ---------------------------
+　↑★ここまでtutti追加部分
+ ---------------------------*/
+/* ---------------------------
+共通main 　text_area
+ -栗原追加部分-
+ ---------------------------*/
+/* 共通 */
+.text_area {
+  font-size: var(--font-text-);
+  width: 247px;
+  line-height: 17px;
+  margin: 0 auto;
+  padding: 15px 0;
+  text-align: center;
+  /* textボーダー外余白 */
+}
+
+.text {
+  padding: 19px 0;
+}
+
+/* text内余白  もしかしたらいらない箇所*/
+
+/* ------------- ここまで共通text_area--------------------- */
+
+
+
+
+
+
+/*---------------------- ここから共通フッター要素-----------------*/
+
+
+/* -----------------------------------------------------------
+page_top area
+--------------------------------------------------------------- */
+.btn {
+  padding: 4px 0;
+  text-align: center;
+  font-size: var(--font-mini-);
+  background-color: var(--rectangle2-);
+  color: var(--rectangle6-);
+  width: 130px;
+  /*page_topの上下40pxの余白部分*/
+  margin: 40px auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+
+/*----------------------------- page_top------------------------------ */
+
+.page_top {
+  text-align: right;
+  padding: 10px;
+}
+
+.page_top_btn {
+  /* position: fixed; */
+  /*最終的に外して調節する*/
+  bottom: 132px;
+  right: 10px;
+  transition-duration: 0.5s;
+  width: 52px;
+  height: 52px;
+  /*ゆっくり現れる*/
+  cursor: pointer;
+}
+
+
+
+/* -----------------------------------------------------------
+footer
+--------------------------------------------------------------- */
+footer {
+  background-color: var(--rectangle2-);
+  text-align: center;
+  position: relative;
+}
+
+.footer_btn_area {
+  padding-top: 10px;
+}
+
+.footer_logo_area {
+  margin: 0 auto;
+  width: 72px;
+  height: 29px;
+}
+
+.footer_icon_area {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+
+}
+
+.footer_icon_area img {
+  padding: 14px 6px;
+  /*アイコン同士の幅調節*/
+}
+
+.copy_right {
+  color: var(--rectangle6-);
+  font-size: var(--font-mini-);
+  line-height: 14px;
+  margin: 0 auto;
+  padding: 10px 0;
+  border-top: 1px solid var(--rectangle9-);
+}
+
+
+
+/*---------------------- ここまで共通フッター要素-----------------*/
+
+
+
+
+
+/*media Queries 768
+-------------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+
+  /* ----------------------------------------
+ローディング 
+------------------------------------------*/
+  .loading .circle {
+    width: 200px;
+    height: 81.33px;
+  }
+
+
+
+
+  /* ------------------------------------
+  共通部分
+  ---------------------------------------- */
+  main section {
+    margin-left: 103px;
+    margin-right: 103px;
+  }
+
+  /* PCの場合の改行取り消し記述  */
+  .pc_br {
+    display: none;
+  }
+
+  /* テキスト部分大きさ余白 */
+  .text {
+    font-size: var(--font-pcText-);
+    width: 400px;
+    line-height: 26px;
+    margin: 0 auto;
+    padding: 42px 0;
+  }
+
+  /* ---★common.cssにpc用フォントを追加しました--- */
+  .title h2 {
+    font-size: var(--font-pcTitle-);
+    margin-top: 5px;
+  }
+
+  .title p {
+    font-size: var(--font-h2-);
+    margin-top: 20px;
+  }
+
+  /* ---------------------------
+　横棒
+ ---------------------------*/
+  .textBorder {
+    width: 420px;
+  }
+
+  /* PC用横棒 */
+  .border_pc {
+    display: block;
+    border-top: 1px solid var(--rectangle4-);
+    margin: 50px auto;
+    /*元々上下10px余白。しかしずれるため修正*/
+    width: 500px;
+  }
+
+
+
+  /*------------------------------------------------------------------
+    ナビゲーションメニュー 
+   -----------------------------------------------------------------*/
+  .pc_nav {
+    display: block;
+  }
+
+  .nav_content,
+  .menu_bt_container {
+    display: none;
+  }
+
+  .header_logo {
+    display: none;
+  }
+
+
+  .pc_nav_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 7.5%;
+    /*17日修正*/
+    /* ヘッダー余白 */
+  }
+
+  .pc_nav_area {
+    display: flex;
+  }
+
+  /* --------文字の大きさ・余白 ------------------*/
+  .nav_item {
+    font-size: var(--font-h2-);
+    font-weight: bold;
+    text-decoration-line: none;
+    color: var(--rectangle6-);
+    padding: 5% 28px 0;
+    /*17日修正*/
+    /* navの子要素同士の上横余白 */
+  }
+
+  .nav_item:last-child {
+    padding-right: 0;
+    /* navの最後子要素の横余白消す */
+  }
+
+  /* ----------------ロゴ------------------------- */
+  /*  navロゴ*/
+  .pc_logo {
+    width: 133.11px;
+    height: 54px;
+  }
+
+  /* ------------------- nav ---------------------- */
+
+  /* ---------------------------
+【media Queries 768】小見出し部分
+ ---------------------------*/
+
+  /* 小見出しｸﾞﾘｯﾄﾞ枠（右側用） */
+  .title_Cont {
+    width: 100%;
+    display: grid;
+    /* grid-template-columns: 44vw 45.0vw 100px; */
+    grid-template-columns: 43.8vw 46vw 100px;
+    grid-template-rows: 100%;
+  }
+
+  /* 小見出しｸﾞﾘｯﾄﾞ枠（左側用） */
+  .title_Cont_reverse {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100px 46vw 43.8vw;
+    grid-template-rows: 100%;
+  }
+
+  .title {
+    height: 120px;
+    background: url(../../common/image/title_img_pc.svg) no-repeat center bottom;
+    background-size: 49.5vw;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform: translateX(-13%);
+  }
+
+
+  /* ---------------------------------------------
+  背景
+  ------------------------------------------------ */
+  header {
+    height: 766px;
+  }
+
+  .mv {
+    /* pc何故かずれるため再設定 */
+    top: 47%;
+    left: 46%;
+  }
+
+  /* MVロゴ */
+  .logo-tilte {
+    width: 780px;
+    height: 317px;
+  }
+
+  /* top以外のMVロゴ位置 */
+  .pc_mv_title {
+    width: 332px;
+    height: 620px;
+  }
+
+  /* 下矢印大きさ・位置 */
+  .down_button {
+    width: 86px;
+    height: 86px;
+    bottom: -11%;
+  }
+
+  /*------------------------------------------------------------------
+   背景テキスト
+   ------------------------------------------------------------------- */
+  .tilte_text>p {
+    font-size: var(--font-h2-);
+    width: 480px;
+    line-height: 35px;
+  }
+
+/* ---------------------------
+パンくず
+ ---------------------------*/
+.breadcrumb {
+  /* 背景色は各ページで設定 */
+  /* ----------------------------- */
+  list-style: none;
+  padding: 1% 8%;
+  /* 背景色の幅を設定 */
+}
+
+.breadcrumb li {
+  display: inline;
+  /*横に並ぶように*/
+  font-size: var(--font-h2-);
+  /* position: relative; */
+}
+
+/* ----------------------共通ヘッダーここまで ---------------------------*/
+
+
+
+
+  /*----------------------------------------------------------------
+             page_top  PC
+   ---------------------------------------------------------------- */
+  .page_top {
+    padding: 3.5% 2% 1.5% 2%;
+    /*TOP・台北*/
+    /* padding: 5.5% 1% 1.5% 2%; */
+    /*↑台南・台中用*/
+    /* page_topとpage_top areaを台南・台中のときは各cssファイルで上書き設定してください */
+  }
+
+  .page_top_btn {
+    width: 135px;
+    height: 135px;
+    z-index: 50;
+  }
+
+
+  /* -----------------------------------------------------------
+    footer PC
+--------------------------------------------------------------- */
+  footer {
+    height: 340px;
+  }
+
+  /* ロゴ大きさ・余白 */
+  .footer_logo_area {
+    margin: 1% auto;
+    width: 21%;
+  }
+
+  /* アイコン上下余白 */
+  .footer_icon_area {
+    margin: 8% auto 0;
+  }
+
+  .footer_icon_area img {
+    width: 110%;
+  }
+
+  .footer_icon_area img {
+    padding: 19px 24px;
+  }
+
+  /* コピーライト */
+  .copy_right {
+    color: var(--rectangle6-);
+    font-size: 15px;
+    line-height: 22px;
+    padding: 2% 0;
+    border-top: 1px solid var(--rectangle9-);
+    /* 上下各ページ で設定必要↓　因みにこれは台北用*/
+    margin: 2% auto;
+  }
+
+
+
+  /* -----------------------------------------------------------
+page_top area
+--------------------------------------------------------------- */
+  .btn {
+    padding: 15px 0;
+    font-size: var(--font-h2-);
+    width: 301px;
+    margin: 5% auto 0%;
+    /* margin: 3% auto 0%; */
+    /* ↑台南 ・台中用*/
+    /* page_topとpage_top areaを台南・台中のときは各cssファイルで上書き設定してください */
+  }
+
+}
