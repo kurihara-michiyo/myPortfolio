@@ -1,0 +1,918 @@
+@charset "utf-8";
+
+/* ------------------ページ目次----------------------
+共通：~
+ローディング：~
+背景画像：~
+PCメニュー非表示設定：~
+SPメニューボタン :~
+下矢印 :~
+
+main:~
+
+footer:~
+
+レスポンシブ: 424~
+
+----------------------------------------------------------------*/
+
+/* ----------------------------------------------------
+             共通 
+---------------------------------------------------------*/
+
+
+:root {
+  --rectangle1-: #0180BE;
+  --rectangle2-: #007AB7;
+  --rectangle3-: #DA5019;
+  --rectangle4-: #000000;
+  --rectangle5-: #F4F4F4;
+  --rectangle6-: #FFFFFF;
+  --rectangle7-: #EDA184;
+  --rectangle9-: #1F91BE;
+  --rectangle11-: #6CBAD8;
+  --rectangl10-: #FBE481;
+  --rectangle12-: #64C99B;
+  --rectangle8-: #D9D9D9;
+
+  --font-famiry-: 'Zen Kaku Gothic New', sans-serif;
+  /* -- 【memo】1rem=16pxです -- */
+  --font-h2-: 24px;
+  --font-h3-: 20px;
+  --font-h4-: 32px;
+  /* -- ↑tainan_Gourmet -- */
+  --font-h5-: 14px;
+  --font-text-: 12px;
+  --font-mini-: 10px;
+  --font-standard-: 16px;
+  /* --ﾌｫﾝﾄｻｲｽﾞの入力例--
+    -----12pxを指定したいとき-----
+     font-size: var(--font-text-);
+     */
+
+  /* PC用font-size追加 */
+  --font-pcTitle-: 48px;
+  --font-pcText-: 18px;
+  --font-pcminTitle-: 40px;
+  /*6/15追加分*/
+}
+
+
+/*-----------------------------------------------
+        背景画像 
+ ----------------------------------------------*/
+header {
+  background: url(../image/Hero.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+/* ----------------------ここまでヘッダー要素--------------- */
+
+
+
+
+/*---------------------------------------
+        formosa
+ ----------------------------------------- */
+
+/* -----上段------- */
+
+/* とりあえずの高さ */
+.formose {
+  height: 386px;
+  background: url(../image/formosa_sp.jpg) no-repeat;
+  background-size: cover;
+  background-position-x: 78%;
+  position: relative;
+  z-index: -4;
+  text-align: center;
+
+}
+
+/* 背景薄くする記述↓ */
+.formose::after {
+  content: "";
+  background: rgba(255, 255, 255, .5);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -3;
+}
+
+.formose:last-child {
+  height: 380px;
+  margin-top: -2px;
+  /* 背景の重なり部分 謎の白い余白消すため */
+  z-index: -1;
+  background: url(../image/formosa2_sp.jpg);
+  background-size: cover;
+}
+
+
+.formosa_flag {
+  width: 64px;
+  margin: 20px auto;
+}
+
+.formose_title_area {
+  padding: 20px 0 0;
+  /*タイトル上余白*/
+}
+
+.formosa_subtitle {
+  font-size: var(--font-text-);
+  line-height: 1.1rem;
+  padding-bottom: 22px;
+  /*横棒との余白*/
+}
+
+.formosa_img {
+  width: 295px;
+  height: 139px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* -----下段------- */
+
+.formose_text_area {
+  padding: 40px 0 0;
+}
+
+.formosa_text {
+  font-size: var(--font-text-);
+  width: 247px;
+  line-height: 17px;
+  margin: 0 auto;
+  padding: 9px 0;
+}
+
+
+/* ----------------------------------------------------
+           Gallery
+----------------------------------------------------- */
+.gallery {
+  /* inner設定後変更可能性あり↓ */
+  margin-bottom: 50px;
+  /*下余白*/
+}
+
+/*pcのみの背景色  */
+.pc_bg {
+  background-color: transparent;
+}
+
+/* ---------------------------------------
+            カルーセル SP
+-----------------------------------------*/
+.swiper-container {
+  padding-top: 14px;
+  /* カルーセル上余白 */
+}
+
+.sample-slider {
+  width: 295px;
+  height: 467px;
+}
+
+.sample-slider img {
+  width: 100%;
+}
+
+.sample-slider .swiper-wrapper {
+  transition-timing-function: linear;
+}
+
+.swiper-pagination {
+  padding-top: 18px;
+  position: static;
+}
+
+/* ボタン色・大きさ */
+.swiper-pagination-bullet {
+  width: 18px;
+  height: 18px;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: var(--swiper-pagination-bullet-opacity, 1);
+  background: #000;
+}
+
+/* ボタン間隔 */
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 19px;
+}
+
+/* ------カルーセル　ここまで-------------*/
+
+/* -----------------------------------------------------------
+       travel
+--------------------------------------------------------------- */
+.travel {
+  padding-bottom: 85px;
+  /*section下余白*/
+}
+
+.travel_photo_pc {
+  display: none;
+}
+
+/* --------------------------------------------
+                     map
+ ---------------------------------------------*/
+.taiwan_map {
+  width: 178px;
+  height: 334px;
+  margin: 23px auto;
+  /* 後に左右87px →左右autoに戻す　今は画像に合わせてpx設定にしている */
+  position: relative;
+}
+
+/* -----mapピン--------- */
+/* taipei */
+.pin1 {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  top: -15px;
+  right: 23px;
+}
+
+/* taichung */
+.pin2 {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  top: 81px;
+  left: 42px;
+}
+
+/* tainan */
+.pin3 {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  bottom: 72px;
+  left: 25px;
+}
+
+
+/* -----街名--------- */
+.taipei_map {
+  width: 66px;
+  height: 140px;
+  position: absolute;
+  top: 45px;
+  right: -17px;
+}
+
+.taichung_map {
+  width: 66px;
+  height: 140px;
+  position: absolute;
+  top: 38px;
+  left: -38px;
+}
+
+.tainan_map {
+  width: 66px;
+  height: 140px;
+  position: absolute;
+  bottom: -71px;
+  right: 107px;
+}
+
+/*------ 旗 ---------*/
+.map_flag {
+  width: 99px;
+  height: 96px;
+  position: absolute;
+  bottom: 14px;
+  right: 5px;
+}
+
+/* -----------------------------------------------------------
+   event
+--------------------------------------------------------------- */
+.event_list {
+  text-align: center;
+  position: relative;
+  padding-bottom: 60px;
+  /*下余白*/
+}
+
+.event_list:last-child {
+  padding-bottom: 0;
+}
+
+
+/* お花画像 */
+.event_photo::after {
+  content: url(../image/flower.svg);
+  position: absolute;
+  z-index: 1;
+  top: -21px;
+  right: -15px;
+}
+
+.event_photo--revers::after {
+  content: url(../image/flower2.svg);
+  position: absolute;
+  z-index: 1;
+  top: -40px;
+  left: -17px;
+  /* transform: scale(-1, 1); */
+  /*反転*/
+}
+
+
+
+/* 太文字 */
+.event_span {
+  font-weight: bold;
+}
+
+/* 小タイトル */
+.list_title {
+  font-size: var(--font-h3-);
+  position: absolute;
+  padding: 5px;
+  width: 275px;
+  top: -46px;
+  left: calc(50% - 275px/2);
+  background: var(--rectangle5-);
+  z-index: 1;
+}
+
+/* 小タイトル  カウントダウン */
+.event_party_title {
+  height: 58px;
+  width: 250px;
+  left: calc(50% - 240px/2 - 5.5px);
+  top: -85px;
+  line-height: 17px;
+}
+
+/* カウントダウンタイトル行間 */
+.event_party_title>p {
+  padding-top: 10px;
+}
+
+
+/* 写真余白 */
+.event_photo,
+.event_photo--revers {
+  padding: 58px 0 0;
+}
+
+/* -----------------------text_area余白上調節 -----------------------*/
+/* ランタン */
+.area_title {
+  margin-top: 35px;
+  line-height: 17px;
+  /* ↓小タイトル用の絶対値 */
+  position: relative;
+}
+
+/* カウントダウン */
+.area_title_party {
+  margin-top: 61px;
+}
+
+/* 上余白削除 */
+/* ランタン */
+.event>.event_list>.area_title>.text_area {
+  padding-top: 0;
+}
+
+/* カウントダウン */
+.event>.event_list>.area_title_party>.text_area {
+  padding-top: 0;
+}
+
+
+/* -----------------------------------------------------------
+    access
+--------------------------------------------------------------- */
+.access {
+  padding-top: 47px;
+  padding-bottom: 10px;
+}
+
+.accsess_wrapper {
+  outline: 1px solid rgba(143, 143, 143, 1);
+}
+
+.accsess_title {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.access_list {
+  padding: 17px 24px 0;
+  line-height: 20px;
+}
+
+.access_list:last-child {
+  padding-bottom: 25px;
+}
+
+.access_item:last-child {
+  padding-top: 20px;
+}
+
+
+/*media Queries 768
+----------------------------------------------------------------------------    ----*/
+@media screen and (min-width: 768px) {
+
+
+  /* -----------------------------------------------
+      共通 
+  ----------------------------------------------*/
+  /* 共通余白 */
+  .travel,
+  .event {
+    padding-top: 170px;
+  }
+
+/* -----------------各タイトル文字位置 --------------------------*/
+/* 可変したときにずれるため今はコメントアウト */
+/* Gallery */
+.gallery > .title_Cont > .title > h2  {
+  transform: translateX( -50%);
+}
+.gallery > .title_Cont > .title > p  {
+  transform: translateX( -39%);
+}
+
+/* Travel */
+.travel > .title_Cont_reverse > .title > h2  {
+  transform: translateX( -25%);
+}
+.travel > .title_Cont_reverse > .title > p  {
+  transform: translateX( -11%);
+}
+
+/* Event */
+.event > .title_Cont > .title > h2  {
+  transform: translateX( -34%);
+}
+.event > .title_Cont > .title > p  {
+  transform: translateX( -14%);
+}
+
+
+  /* 他ページでも使える可能性あり */
+
+
+  /*--------------------　背景画像----------------------------*/
+
+  header {
+    background: url(../image/Hero_pc.jpg) no-repeat;
+    background-size: cover;
+  }
+
+  /* ---------------------------------------
+         カルーセル  PC
+  -----------------------------------------*/
+  /* カルーセル画像大きさ */
+  .sample-slider {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* ------カルーセル PC　ここまで-------------*/
+
+  /*-----------------------------------------------------------
+           formosa PC
+ ----------------------------------------- ------------------*/
+
+  .formose {
+    height: 450px;
+    /*目安高さ*/
+    background: url(../image/formosa_sp.jpg) no-repeat;
+    background-size: cover;
+    background-position-y: 50%;
+    position: relative;
+    z-index: -4;
+    text-align: center;
+    display: flex;
+    padding-left: 103px;
+    padding-right: 103px;
+  }
+
+  .formose:last-child {
+    height: 450px;
+    background: url(../image/formosa2_sp.jpg);
+    background-size: cover;
+    background-position-y: 50%;
+  }
+
+  /* 要素反対記述 */
+  .formose:nth-child(2n) {
+    flex-direction: row-reverse;
+  }
+
+  /* 要素の分ける比率 */
+  .formose_title_area,
+  .formose_text_area {
+    flex-basis: 524px;
+  }
+
+  /*--------- 画像高さ・位置 ----------*/
+  .formosa_img {
+    flex-basis: 636px;
+    padding: 87px 0;
+  }
+
+  /* 2枚目の画像高さ */
+  .pc_formosa {
+    height: 295px;
+    image-rendering: pixelated;
+  }
+
+  /* ---------------画像調節----------------- */
+
+  .formosa_flag {
+    width: 272.91px;
+    height: 111.19px;
+    margin-top: 0;
+    margin-right: 100%;
+  }
+
+  .formose_title_area {
+    text-align: left;
+  }
+
+  /* タイトル文字サイズ */
+  .formose_title {
+    padding-top: 62px;
+    /*上余白*/
+    font-size: var(--font-pcTitle-);
+  }
+
+  .formosa_subtitle {
+    padding-top: 20px;
+    /*上余白*/
+    font-size: var(--font-h4-);
+  }
+
+  /* 横棒位置 */
+  .formose_title_area>.textBorder {
+    width: 382px;
+    margin-right: 100%;
+    margin-top: 25px;
+  }
+
+  /* テキスト部分 */
+  .formosa_text {
+    font-size: var(--font-pcText-);
+    width: 400px;
+    line-height: 26px;
+    margin: 0 auto;
+    padding: 42px 0;
+    /*横棒との余白*/
+  }
+
+  .formose_text_area {
+    position: relative;
+  }
+
+  .pc_formose {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  /* ----------------------------------------------------
+         Gallery PC
+----------------------------------------------------- */
+  .pc_bg {
+    display: block;
+    background-color: #E2E2E2;
+    ;
+  }
+
+  .gallery {
+    padding-top: 20px;
+    padding-bottom: 33px;
+  }
+
+  .swiper-container {
+    padding-top: 61px;
+  }
+
+  /* ボタン上余白 */
+  .swiper-pagination {
+    padding-top: 92px;
+    position: static;
+  }
+
+  /* ボタン大きさ */
+  .swiper-pagination-bullet {
+    width: 25px;
+    height: 25px;
+  }
+
+  .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+  .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 30px;
+  }
+
+  /* -----------------------------------------------------------
+        travel PC
+--------------------------------------------------------------- */
+
+  .pc_travel {
+    display: flex;
+  }
+
+
+  /* travelテキスト部分の位置 */
+  .travel>.pc_travel>.travel_text_area>.text_area {
+    margin: 46px auto 0 30px;
+  }
+
+  /* PCのみの写真部分 */
+  .travel_photo_pc {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    column-gap: 1%;
+    row-gap: 3%;
+    padding-top: 23%;
+  }
+
+  .travel_text_area {
+    flex-basis: 50%;
+  }
+
+  /* -------------------------------------------------------------------
+          map PC
+ ------------------------------------------------------------------*/
+  .top_map {
+    flex-basis: 50%;
+  }
+
+  .taiwan_map {
+    width: 268.53px;
+    height: 499.49px;
+    margin: 11% 44%;
+  }
+
+  /* -----mapピン--------- */
+  /* taipei */
+  .pin1 {
+    width: 45.26px;
+    height: 74.77px;
+    top: -4%;
+    right: 16%;
+  }
+
+  /* taichung */
+  .pin2 {
+    width: 45.26px;
+    height: 74.77px;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+  }
+
+  /* tainan */
+  .pin3 {
+    width: 45.26px;
+    height: 74.77px;
+    position: absolute;
+    bottom: 23%;
+    left: 11%;
+  }
+
+
+  /* -----街名--------- */
+  .taipei_map {
+    width: 99.57px;
+    height: 209.37px;
+    position: absolute;
+    top: 12%;
+    right: 4%;
+  }
+
+  .taichung_map {
+    width: 99.57px;
+    height: 209.37px;
+    position: absolute;
+    top: 18%;
+    left: -25%;
+  }
+
+  .tainan_map {
+    width: 99.57px;
+    height: 209.37px;
+    position: absolute;
+    bottom: -8%;
+    right: 94%;
+  }
+
+  /*------ 旗 ---------*/
+  .map_flag {
+    width: 149.35px;
+    height: 143.57px;
+    position: absolute;
+    bottom: 5%;
+    right: 6%;
+  }
+
+  /* ---------------------------------------------------------------
+             Event PC
+  ---------------------------------------------------------------- */
+  /* 横並び・section余白 */
+  .event_list {
+    display: flex;
+    padding-top: 23%;
+  }
+
+  .event_list:last-child {
+    padding-top: 12%;
+  }
+
+  /* ---------イベント表示逆記述 ------------ */
+  .event_list:last-child {
+    flex-direction: row-reverse;
+  }
+
+  /*  PC用横棒取り消し*/
+  .event_list>.area_title>.text_area>.textBorder {
+    display: none;
+  }
+
+
+
+  /* -------------------------ランタン部分--------------------------- */
+  /*----------- 幅指定----------- */
+  .event_photo {
+    padding-top: 0;
+    /*仮余白消し*/
+    flex-basis: 69%;
+  }
+
+  .area_title {
+    margin-top: 3%;
+    flex-basis: 31%;
+    width: 90%;
+  }
+
+  /* 写真幅 */
+  .event_photo img {
+    height: 77%;
+    width: 100%;
+  }
+
+  /* ---------------見出し部分 ----------------*/
+  /* ランタン */
+  .list_title {
+    font-size: var(--font-pcminTitle-);
+    width: 536px;
+    top: -25%;
+    left: -169px;
+  }
+
+
+  /* -------------ランタンテキスト------------------ */
+  /* イベント内開催日時項目font-size */
+  .event_item,
+  .event_item--revers {
+    font-size: var(--font-pcText-);
+    line-height: 26px;
+  }
+
+  /* テキスト部分幅 */
+  .event_list>.area_title>.text_area>.text {
+    width: 258px;
+  }
+
+  /* ランタン小タイトル上余白 */
+  .event_item {
+    margin-top: -2%;
+  }
+
+
+  /* -----------------------カウントダウン部分--------------- */
+  /*----------- 幅指定----------- */
+  .event_photo--revers {
+    flex-basis: 80%;
+  }
+
+  .area_title_party {
+    flex-basis: 25%;
+  }
+
+  /* 写真幅 */
+  .event_photo--revers img {
+    height: 70%;
+    width: 90%;
+  }
+
+  /* -------カウントダウンテキスト------------ */
+  .area_title_party {
+    margin-top: 2%;
+  }
+
+  .event_item--revers {
+    margin-top: 1%;
+    margin-left: -3%;
+  }
+
+  /* ----------見出し部分 -------------*/
+  /* カウントダウン */
+  .event_party_title>p {
+    padding-top: 0;
+    padding-bottom: 6%;
+  }
+
+  .event_party_title {
+    text-align: left;
+    top: -31%;
+    left: -1%;
+  }
+
+
+
+  /* お花大きさ・位置 */
+  .event_photo::after {
+    content: url(../image/flower1_pc.svg);
+    top: 0;
+    left: -75%;
+  }
+
+  .event_photo--revers::after {
+    content: url(../image/flower2_pc.svg);
+    top: -20%;
+    left: 67%;
+  }
+
+
+
+  /* -----------------------------------------------------------
+         access  PC
+--------------------------------------------------------------- */
+  /* 余白調節 */
+  .access {
+    margin-top: -9%;
+    margin-left: 11%;
+    margin-right: 11%;
+  }
+
+  .accsess_wrapper {
+    padding-bottom: 5%;
+  }
+
+  /* ------見出し-----  */
+  .accsess_title {
+    font-size: var(--font-pcminTitle-);
+    padding: 3% 0;
+  }
+
+  .access_inner {
+    display: flex;
+  }
+
+  /* ---------テキストエリア------------ */
+  .access_list {
+    flex: 1 1 0;
+    font-size: var(--font-pcText-);
+    line-height: 35px;
+    padding: 3% 0 0 9%
+  }
+
+
+  /* -------------右側内大きさ */
+  .access_item {
+    width: 357px;
+  }
+
+  /* 右側余白 */
+  .access_list:last-child {
+    padding: 3% 3% 0 6%;
+  }
+
+
+  /* ---------------右側下内大きさ */
+  .access_item:last-child {
+    width: 372px;
+  }
+
+  .access_item:last-child {
+    padding-top: 10%;
+  }
+
+
+
+
+}

@@ -1,0 +1,1374 @@
+@charset "utf-8";
+/* //////////////////////////////////////////////*/
+/*MENUここから------------------*/
+/* ---共通--- */
+/* ---背景画像(header)--- */
+/* ---背景テキスト--- */
+/* ---メニューボタン :他ページ共通--- */
+/* ---パンくず--- */
+
+/* --- tutti 制作ここから  --- */
+/* --- レイアウト微調整用 --- */
+/* --- 微調整marginBtm  --- */
+/* --- pc版のみ表示したい  --- */
+/* --- ★attraction_spここから -----*/
+/* Attraction grid 枠部分 */
+/* --- 背景色の配置 --- */
+/* Attraction grid内部配置 */
+
+/* --- museum_spここから -----*/
+/* --- museum font --- */
+/* --- museum photo --- */
+/* --- modal_spここかから --- */
+
+/*----- Sweets_spここから -----*/
+/* --- Sweets font --- */
+/* --- Sweetsｸﾞﾘｯﾄﾞ ここから -----*/
+/* --- footer余白調整 */
+
+/*media Queries 768(min-width: 768px) ------------*/
+/*↓commonに入れたい! title文字 ここから */
+/* --- sp版のみ表示したい --- */
+
+/* --- 【media Queries 768】小見出し部分　微調整 --- */
+/* --- ★【media Queries 768】attraction_pcここから  --- */
+/* Attraction grid 枠部分 */
+/* --- 背景色の配置 --- */
+/* Attraction grid内部配置 */
+
+/* --- 【media Queries 768】section.museumここから --- */
+/* --- ★調整中 --- */
+
+/* --- 【media Queries 768】museum写真部分grid --- */
+/* --- 【media Queries 768】museum情報部分 --- */
+/* ---  pc版のみ表示したい --- */
+/* --- 【media Queries 768】museum情報部分 --- */
+/* --- 【media Queries 768】museum写真配置 --- */
+
+/* --- 【media Queries 768】section.sweetsここから --- */
+/* ---  宮原眼科 部分 --- */
+/* --- 【media Queries 768】sweets写真部分grid --- */
+/* ----- tutti 制作ここまで ----- */
+
+/* ------ ↓共通部分 微調整ここから ------ */
+
+/*@media screen and (min-width: 1100px) ------------*/
+
+/*MENUここまで------------------*/
+/* //////////////////////////////////////////////*/
+
+
+
+/* ----------------------------------------------------
+
+/* ----------------------------------------------------
+共通 
+---------------------------------------------------------*/
+
+
+:root {
+  --rectangle1-: #0180BE;
+  --rectangle2-: #007AB7;
+  --rectangle3-: #DA5019;
+  --rectangle4-: #000000;
+  --rectangle5-: #F4F4F4;
+  --rectangle6-: #FFFFFF;
+  --rectangle7-: #EDA184;
+  --rectangle9-: #1F91BE;
+  --rectangle11-: #6CBAD8;
+  --rectangl10-: #FBE481;
+  --rectangle12-: #64C99B;
+  --rectangle8-: #D9D9D9;
+
+  --font-famiry-: 'Zen Kaku Gothic New', sans-serif;
+  /* -- 【memo】1rem=16pxです -- */
+  --font-h2-: 24px;
+  --font-h3-: 20px;
+  --font-h4-: 32px;
+  /* -- ↑tainan_Gourmet -- */
+  --font-h5-: 14px;
+  --font-text-: 12px;
+  --font-mini-: 10px;
+  --font-standard-: 16px;
+  /* --ﾌｫﾝﾄｻｲｽﾞの入力例--
+    -----12pxを指定したいとき-----
+     font-size: var(--font-text-);
+     */
+}
+
+
+
+/*----------------------------------------
+ 背景画像
+ ----------------------------------------- */
+
+header {
+  background: url(../image/image_taichung_sp/taipei_hero_sp.jpg) no-repeat;
+  background-size: cover;
+}
+
+/*--------------------------------
+       MVロゴ
+  ------------------------------- */
+/* top以外のMVロゴ位置 */
+/* .pc_mv_taipei {
+  top: 50%;
+  left: 28%;
+} */
+
+/*------------------------------------------------------------------
+ 背景テキスト
+ ------------------------------------------------------------------- */
+.tilte_text {
+  /* ここからはそれぞれのcssでテキスト位置設定必要 */
+  bottom: 60px;
+  right: 20px;
+  /* ---ここまで---- */
+}
+
+
+/* -------------------------------------------------------
+メニューボタン :他ページ共通
+--------------------------------------------------------*/
+.nav_bar {
+  display: flex;
+  justify-content: end;
+  /* ↓他ページのヘッダー */
+  justify-content: space-between;
+
+}
+
+/* ---------------------------
+パンくず
+ ---------------------------*/
+.breadcrumb {
+  /* 背景色は各ページで設定 */
+  background: rgba(237, 161, 132, 0.2);
+
+  /* ----------------------------- */
+
+}
+
+/* ----- tutti 制作ここから ----- */
+/* --- レイアウト微調整用 --- */
+.paddingTop3 {
+  padding-top: 3px;
+}
+
+/* sp版_Y軸_微調整 */
+.transY13 {
+  transform: translateY(-13px);
+}
+
+.transY15 {
+  transform: translateY(15px);
+}
+
+/* ----- 微調整marginBtm ----- */
+.marginBtm18 {
+  margin-bottom: 18px;
+}
+
+/* .marginTop25 {
+  margin-top: 25px;
+} */
+
+/* --- pc版のみ表示したい --- */
+.none_sp {
+  display: none;
+}
+
+.none_sp_m {
+  display: none;
+}
+
+/* --- ★attraction_spここから -----*/
+
+/* Attraction grid 枠部分 */
+div.att_Cont {
+  width: 100%;
+  position: relative;
+  height: 1470px;
+  display: grid;
+  grid-template-rows: 15% 14% 12% 5% 7.7% 14.8% 14% 12.1% 5%;
+  grid-template-columns: 100%;
+}
+
+/* --- 背景色の配置 --- */
+.colorBox_01,
+.colorBox_03 {
+  position: absolute;
+  background-color: rgba(237, 161, 132, 0.2);
+  width: 77.5vw;
+  height: 318px;
+  padding: 5px;
+}
+
+.colorBox_01 {
+  z-index: -10;
+  right: 0px;
+  top: 110px;
+}
+
+.colorBox_03 {
+  z-index: -30;
+  left: 0px;
+  top: 895px;
+}
+
+.colorBox_02,
+.colorBox_04 {
+  position: absolute;
+  background-color: rgba(237, 161, 132, 0.2);
+  width: 100%;
+  height: 54px;
+  left: 0px;
+  padding: 5px;
+}
+
+.colorBox_02 {
+  top: 603px;
+  z-index: -20;
+}
+
+.colorBox_04 {
+  top: 1390px;
+  z-index: -40;
+}
+
+/* Attraction grid内部配置 */
+/* photo */
+.att_01 {
+  background: url(../image/image_taichung_sp/attraction01_sp.jpg) no-repeat left bottom/cover;
+  height: 218px;
+  width: 87%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+  position: relative;
+  /* grid */
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.att_title_L {
+  background-color: #FFF;
+  letter-spacing: 8px;
+  padding-left: 10px;
+  width: 159px;
+  height: 35px;
+  position: absolute;
+  top: -20px;
+  left: -1px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.att_02 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.att_02 p {
+  width: 75%;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: 20px;
+  text-align: center;
+  /* ↓100vw=375pxの時17.12px */
+  /* line-height: 1.07rem; */
+  line-height: clamp(15px, 4.5vw, 31px);
+  /* letter-spacing: 1px; */
+}
+
+.att_03 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background: url(../image/image_taichung_sp/attraction02_sp.jpg) no-repeat center center/cover;
+  background-size: 82%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+}
+
+.att_04 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.att_04 p {
+  width: 75%;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1.07rem;
+}
+
+.att_05 {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  margin-top: 30px;
+}
+
+.att_06 {
+  grid-column: 1/2;
+  grid-row: 6/7;
+  background: url(../image/image_taichung_sp/attraction03_sp.jpg) no-repeat right center/cover;
+  position: relative;
+  height: 218px;
+  width: 100%;
+  background-size: 89%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+}
+
+
+.att_title_R {
+  background-color: #FFF;
+  letter-spacing: 7px;
+  padding-left: 8px;
+  width: 159px;
+  height: 35px;
+  position: absolute;
+  top: -19px;
+  right: -1px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.att_07 {
+  grid-column: 1/2;
+  grid-row: 7/8;
+}
+
+.att_07 p {
+  width: 75%;
+  margin-left: 20px;
+  margin-right: auto;
+  text-align: center;
+  /* ↓100vw=375pxの時17.12px */
+  /* line-height: 1.07rem; */
+  line-height: 4.5vw;
+  margin-top: 27px;
+}
+
+.att_08 {
+  grid-column: 1/2;
+  grid-row: 8/9;
+  background: url(../image/image_taichung_sp/attraction04_sp.jpg) no-repeat center center/cover;
+  background-size: 82%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+}
+
+.att_09 {
+  grid-column: 1/2;
+  grid-row: 9/10;
+}
+
+.att_09 p {
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1.07rem;
+  letter-spacing: 1.2;
+}
+
+/* --- ★attraction_spここまで -----*/
+
+/* --- museum_spここから -----*/
+/* --- museum font --- */
+.museuClick {
+  margin-top: 49px;
+}
+
+.museuClick a {
+  color: #FFFFFF;
+  text-shadow: 1px 1px 2px #000;
+  position: absolute;
+  right: 8px;
+  bottom: 12px;
+  letter-spacing: 3px;
+}
+
+.museuClick a:hover {
+  background-color: #007AB7;
+  padding: 1px;
+  border-radius: 3px;
+}
+
+.museuClick p.description {
+  text-shadow: 1px 1px 1px #FFF;
+  position: absolute;
+  left: 10px;
+  top: 13px;
+}
+
+.museuClick p.bold {
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #FFF;
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+
+
+/* --- museum photo --- */
+.museum01,
+.museum02,
+.museum03,
+.museum04 {
+  position: relative;
+  margin-right: 5px;
+  /* height: 133px; */
+  margin-bottom: 10px;
+  /* border-radius: 5px;
+      box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+      opacity: 0.8; */
+}
+
+/* img */
+.museum01 img,
+.museum02 img,
+.museum03 img,
+.museum04 img {
+  height: 133px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  opacity: 0.8;
+}
+
+/* PC用 ｸﾘｯｸできると気づいてもらいたい */
+.museum01 img:hover,
+.museum02 img:hover,
+.museum03 img:hover,
+.museum04 img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+/* --- modal_spここかから --- */
+.museuClick {
+  position: relative;
+}
+
+.modal_Back01,
+.modal_Back02,
+.modal_Back03,
+.modal_Back04 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #FFF;
+  text-shadow: 2px 2px 2px #000;
+  z-index: 1000;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.modal_Cont {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#modal_Close01,
+#modal_Close02,
+#modal_Close03,
+#modal_Close04 {
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  filter: drop-shadow(0px 0px 5px #FFF);
+  position: absolute;
+}
+
+.modal_Title {
+  margin-top: 105px;
+  margin-bottom: 50px;
+  /* font-size:24px; */
+  font-size: var(--font-h2-);
+  font-weight: bold;
+}
+
+#modal_Photo {
+  /* position: absolute;
+  top: 185px; */
+  /* margin-top: 50px; */
+  /* margin-right: 20px; */
+  background: url(../image/image_taichung_sp/modal01.jpg) no-repeat center center/contain;
+  height: clamp(150px, 49.3vw, 250px);
+}
+
+
+.mPhoto01,
+.mPhoto02,
+.mPhoto03,
+.mPhoto04 {
+  width: clamp(335px, 90vw, 450px);
+}
+
+.modal_Text {
+  /* position: absolute;
+  top: 390px; */
+  /* font-size:12px; */
+  font-size: var(--font-text-);
+  font-weight: bold;
+  margin-top: 24px;
+  line-height: 17px;
+}
+
+.modal_HP {
+  /* position: absolute; */
+  /* top: 518px; */
+  /* bottom: 200px; */
+  font-size: var(--font-text-);
+  margin-top: 60px;
+  width: 100%;
+  /* text-align: center; */
+}
+
+.modal_HP a:hover {
+  background-color: #007AB7;
+  padding: 1px 3px 5px;
+  border-radius: 3px;
+}
+
+/* --- modal_spここまで --- */
+/* --- museum_spここまで -----*/
+/*----- Sweets_spここから -----*/
+.sweets {
+  margin-top: 20px;
+}
+
+.sweets p.text12 {
+  line-height: 16px;
+}
+
+.sweetsItem_01 p {
+  width: 100%;
+  padding-left: 53px;
+  padding-right: 53px;
+  text-align: center;
+}
+
+.sweetsItem_01 p.textBorder {
+  width: 70%;
+}
+
+.sweetsCont_1 {
+  width: 100%;
+  text-align: center;
+  padding-left: 42px;
+  padding-right: 42px;
+}
+
+.sweetsCont_1 p.text12 {
+  line-height: 1.06rem;
+}
+
+.sweetsCont_2 {
+  width: 100%;
+  text-align: center;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 10px;
+}
+
+/* --- Sweets font --- */
+.sweetsCont_2 p.text12 {
+  line-height: 1.05rem;
+}
+
+/*----- Sweetsｸﾞﾘｯﾄﾞ ここから -----*/
+
+.gridWrapper {
+  padding-left: 3px;
+  padding-right: 3px;
+  width: 100%;
+  height: 940px;
+  display: grid;
+  grid-template-rows: 6.7% 8.5% 17.5% 11% 21.5% 11.7% 11.7% 9.6%;
+  grid-template-columns: 48% 13px 11px 45%;
+}
+
+.sweetsItem_01 {
+  grid-column: 1/5;
+  grid-row: 1/2;
+}
+
+.sweetsItem_02 {
+  grid-column: 1/5;
+  grid-row: 2/3;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.sweetsItem_03 {
+  grid-column: 1/3;
+  grid-row: 3/5;
+  background: url(../image/image_taichung_sp/sweets01_sp.jpg) no-repeat right bottom/cover;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 354px;
+}
+
+.sweetsItem_03 img {
+  height: 98%;
+  width: auto;
+}
+
+.sweetsItem_04 {
+  grid-column: 4/5;
+  grid-row: 3/4;
+  background: url(../image/image_taichung_sp/sweets02_sp.jpg) no-repeat left center/contain;
+  background-size: 78%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 290px;
+  margin-bottom: 5px;
+}
+
+.sweetsItem_04 img {
+  height: auto;
+  width: 77%;
+}
+
+.sweetsItem_05 {
+  grid-column: 4/5;
+  grid-row: 4/5;
+  background: url(../image/image_taichung_sp/sweets03_sp.jpg) no-repeat left center/cover;
+  margin-top: 5px;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 299px;
+}
+
+.sweetsItem_06 {
+  grid-column: 1/5;
+  grid-row: 5/6;
+  padding-top: 30px;
+}
+
+.sweetsItem_07 {
+  grid-column: 1/2;
+  grid-row: 6/8;
+  margin-left: 3px;
+  background: url(../image/image_taichung_sp/sweets04_sp.jpg) no-repeat right center/cover;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 306px;
+}
+
+.sweetsItem_08 {
+  grid-column: 3/5;
+  grid-row: 6/7;
+  transform: translateX(-4px);
+  margin-bottom: 5px;
+  background: url(../image/image_taichung_sp/sweets05_sp.jpg) no-repeat left top/cover;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 320px;
+}
+
+.sweetsItem_09 {
+  grid-column: 3/5;
+  grid-row: 7/8;
+  transform: translateX(-4px);
+  margin-top: 5px;
+  background: url(../image/image_taichung_sp/sweets06_sp.jpg) no-repeat left center/cover;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 320px;
+}
+
+.sweetsItem_10 {
+  grid-column: 1/5;
+  grid-row: 8/9;
+  padding-top: 10px;
+}
+
+/*----- ｸﾞﾘｯﾄﾞ ここまで -----*/
+
+/* footer余白調整 */
+.f_transY10 {
+  transform: translateY(10px);
+}
+
+.btn {
+  margin-top: 0;
+}
+
+/*----- Sweets_spここまで -----*/
+/* ----- tutti 制作ここまで ----- */
+
+
+
+
+
+
+
+
+
+
+/*media Queries 768
+----------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+  /*----------------------------------------
+ 背景画像
+ ----------------------------------------- */
+
+  header {
+    background: url(../image/image_taichung_pc/taipei_hero_pc.jpg) no-repeat;
+    background-size: cover;
+  }
+
+
+  /* MV部分 */
+  .mv {
+    top: 54%;
+    left: 28%;
+  }
+
+
+  /*--------------------------------
+       MVロゴ
+  ------------------------------- */
+  .pc_mv_title {
+    width: 171%;
+    height: 50%;
+  }
+
+  /* ----- tutti 制作ここから ----- */
+  /* ☆0617追加*/
+  /*↓commonに入れたい! title文字 ここから */
+  .title h2 {
+    font-size: clamp(1.5rem, 3.52vw, 3rem);
+    /* margin-top: 5px; */
+    margin-bottom: clamp(40px, 5.7vw, 80px);
+    margin-top: auto;
+  }
+
+  /* .subtitle,  */
+  .title p {
+    font-size: clamp(1rem, 1.77vw, 1.5rem);
+    /* margin-top: 20px; */
+    margin-bottom: clamp(40px, 5.5vw, 73px);
+    margin-top: auto;
+  }
+
+  /* .subtitle {
+    font-size: var(--font-standard-); */
+  /* margin-top: 5px; */
+  /* ↑調節のため隠す */
+  /* } */
+
+  /* ↑commonに入れたい! title文字 ここまで */
+
+
+  /* ----- tutti 制作ここから ----- */
+  /* --- sp版のみ表示したい --- */
+  .none_pc {
+    display: none;
+  }
+
+  /* ---------------------------
+【media Queries 768】小見出し部分
+ ---------------------------*/
+
+  /* --- 【media Queries 768】小見出し部分 微調整 --- */
+  /* .t_transX77 {
+    transform: translateX(-77px);
+  } */
+
+  .t_transX15 {
+    transform: translateX(-15px);
+  }
+
+  .t_transX33 {
+    transform: translateX(-33px);
+  }
+
+  .t_transX5 {
+    transform: translateX(-5px);
+  }
+
+  .t_transX5_r {
+    transform: translateX(5px);
+  }
+
+
+  /* --- ★【media Queries 768】attraction_pcここから  --- */
+  /* Attraction grid 枠部分 */
+  div.att_Cont {
+    width: 100%;
+    position: relative;
+    height: 1271px;
+    display: grid;
+    grid-template-rows: 31.5% 14.5% 8% 31.5% 15%;
+    grid-template-columns: 48% 50px 45%;
+  }
+
+  /* --- 背景色の配置 --- */
+  .colorBox_01,
+  .colorBox_03 {
+    position: absolute;
+    background-color: rgba(237, 161, 132, 0.2);
+    /* width: 70.0vw; */
+    width: 65vw;
+    height: 423px;
+  }
+
+  .colorBox_01 {
+    /* z-index: -10; */
+    width: 69vw;
+    left: 290px;
+    top: 50px;
+  }
+
+  .colorBox_03 {
+    /* z-index: -30;
+    left: 0px; */
+    width: 71vw;
+    transform: translateX(-100px);
+    top: 740px;
+  }
+
+  .colorBox_02,
+  .colorBox_04 {
+    position: absolute;
+    background-color: rgba(237, 161, 132, 0.2);
+    height: 78px;
+  }
+
+  .colorBox_02 {
+    /* width: 43vw; */
+    width: 588px;
+    top: 510px;
+    /* left: -20px; */
+    transform: translateX(-100px);
+    /* z-index: -20; */
+  }
+
+  /* ↓vw:800px前後で崩れるため＠1100を設定 */
+  .colorBox_04 {
+    /* width: 41.5vw; */
+    width: 60vw;
+    /* width: 550px; */
+    top: 1200px;
+    /* left: 50.2vw; */
+    left: 35vw;
+    /* left: 690px; */
+    /* z-index: -40; */
+  }
+
+  /* Attraction grid内部配置 */
+  /* photo */
+  .att_01 {
+    background: url(../image/image_taichung_pc/attraction01_pc.jpg) no-repeat left top/cover;
+    height: 398px;
+    width: 100%;
+    background-size: 98%;
+    margin-top: 3px;
+    margin-left: 8px;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1066px;
+    position: relative;
+    /* grid */
+    grid-column: 1/2;
+    grid-row: 1/2;
+    /* transform: translateX(-10px); */
+  }
+
+  .att_title_L {
+    letter-spacing: 11px;
+    padding-left: 12px;
+    padding-top: 10px;
+    width: 220px;
+    height: 60px;
+    position: absolute;
+    font-size: 2.25rem;
+    top: -1px;
+    /* left: 100px; */
+  }
+
+  .att_02 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    width: 100%;
+  }
+
+
+  .att_02 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    /* line-height: 1.65rem; */
+    line-height: clamp(20px, 1.93vw, 1.65rem);
+    margin-top: 85px;
+    /* margin-left: 55px; */
+    margin-left: 4.2vw;
+    /* margin-right: 55px; */
+    width: 82%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 18px 10px;
+    /* letter-spacing: 1.3px; */
+  }
+
+  .att_03 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background: url(../image/image_taichung_pc/attraction02_pc.jpg) no-repeat left bottom/cover;
+    /* background-size: 86.5%; */
+    background-size: 100%;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1010px;
+    margin-left: 5px;
+    /* margin-top: 10px; */
+    transform: translateY(7px);
+  }
+
+  .att_04 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .att_04 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    line-height: 1.6rem;
+    margin-top: 120px;
+    /* margin-left: 95px; */
+    /* margin-left: 48px; */
+    margin-left: 3.5vw;
+  }
+
+  .att_06 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+    /* background: url(../image/image_taichung_pc/attraction03_pc.jpg) no-repeat center center/cover; */
+    background: url(../image/image_taichung_pc/attraction03_pc.jpg) no-repeat center top/cover;
+    position: relative;
+    height: 100%;
+    width: 39.5vw;
+    /* margin-left: 30px; */
+    margin-left: 35px;
+    transform: translateY(5px);
+    background-size: 99%;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1060px;
+  }
+
+
+  .att_title_R {
+    letter-spacing: 11px;
+    padding-left: 5px;
+    padding-top: 10px;
+    width: 225px;
+    height: 60px;
+    font-size: 2.25rem;
+    top: -1px;
+    right: -1px;
+  }
+
+  .att_07 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+
+  .att_07 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    line-height: 1.6rem;
+    /* width: 65%; */
+    width: 75%;
+    padding: 20px 0;
+    /* margin-top: 110px; */
+    /* margin-left: 175px; */
+    margin-top: 115px;
+    /* margin-left: 95px; */
+    margin-left: 7vw;
+    border-top: 0.5px solid #000;
+    border-bottom: 0.5px solid #000;
+  }
+
+
+
+  .att_08 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    background: url(../image/image_taichung_pc/attraction04_pc.jpg) no-repeat right bottom/cover;
+    /* background-size: 80%; */
+    background-size: 93%;
+    margin-top: 16px;
+    transform: translateX(9px);
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1010px;
+  }
+
+  .att_09 {
+    grid-column: 3/4;
+    grid-row: 5/6;
+  }
+
+  .att_09 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    line-height: 1.6rem;
+    margin-top: 125px;
+    /* margin-left: 25px; */
+    /* margin-left: 75px; */
+    margin-left: 5.5vw;
+    /* letter-spacing: 1.1px; */
+  }
+
+  .height_01 {
+    height: 45px;
+  }
+
+  /* --- ★【media Queries 768】attraction_pcここまで --- */
+
+  /* --- 【media Queries 768】section.museumここから --- */
+
+  /* ---★調整中--- */
+  .museumTop {
+    padding-left: 42vw;
+  }
+
+  .museumTop p.text24 {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    width: 83%;
+    padding: 25px 10px;
+    /* border-top: 1px solid #000;
+        border-bottom: 1px solid #000; */
+    margin: 20px auto 80px;
+  }
+
+  /* --- 【media Queries 768】museum写真部分grid --- */
+  div.museuClick {
+    display: grid;
+    text-align: center;
+    grid-template-rows: 384px 12px 384px;
+    grid-template-columns: 7% 43.3% 18px 43.3% 5.4%;
+  }
+
+  div.museum01 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+  }
+
+  div.museum02 {
+    grid-column: 4/5;
+    grid-row: 1/2;
+  }
+
+  div.museum03 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+  }
+
+  div.museum04 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+  }
+
+  /* ---  ★museum作成中 --- */
+  /* --- 【media Queries 768】museum写真部分grid --- */
+  /* .museuClick {
+    margin-top: 49px;
+  }*/
+
+  /* 【media Queries 768】museum情報部分 */
+  /* ---  pc版のみ表示したい --- */
+  .none_sp {
+    display: block;
+  }
+
+  .none_sp_m {
+    display: block;
+    position: absolute;
+    width: 25vw;
+    height: 115px;
+    background-color: rgba(255, 255, 255, 0.2);
+    right: 10px;
+    bottom: 20px;
+    color: #FFF;
+    text-shadow: 1px 1px 1px #000;
+    display: flex;
+    align-items: center;
+    padding-left: 6.7%;
+    line-height: 1.1rem;
+  }
+
+  /* --- 【media Queries 768】museum情報部分 --- */
+  .museuClick a {
+    /* color: #FFFFFF;
+text-shadow: 1px 1px 1px #000;
+position: absolute; */
+    right: 4%;
+    bottom: 22px;
+    font-size: var(--font-text-);
+    /* right: 8px;
+bottom: 12px;*/
+    letter-spacing: 0px;
+  }
+
+  .museuClick p.description {
+    /*text-shadow: 1px 1px 1px #FFF;
+    position: absolute;*/
+    left: 19px;
+    top: 24px;
+  }
+
+  .museuClick p.bold {
+    left: 19px;
+    top: 59px;
+  }
+
+  div.museuClick .text24 {
+    font-size: var(--font-h2-);
+  }
+
+  /* 000 */
+  /* padding-left: 42vw; */
+
+  div.museum02 .text24 {
+    margin-top: 8px;
+  }
+
+  div.museum03 .text24 {
+    margin-top: 8px;
+    transform: translateX(-5px);
+  }
+
+  div.museum04 .text24 {
+    margin-top: 10px;
+    transform: translateX(-3px);
+  }
+
+  /* --- 【media Queries 768】museum写真配置 --- */
+  .museum01,
+  .museum02,
+  .museum03,
+  .museum04 {
+    height: 384px;
+  }
+
+  #btn11,
+  #btn12,
+  #btn13,
+  #btn14 {
+    height: 384px;
+  }
+
+  /* .museum01 {
+    background: url(../image/image_taichung_pc/museum01_pc.jpg) no-repeat center center/cover;
+  }
+
+  .museum02 {
+    background: url(../image/image_taichung_pc/museum02_pc.jpg) no-repeat center center/cover;
+  }
+
+  .museum03 {
+    background: url(../image/image_taichung_pc/museum03_pc.jpg) no-repeat center center/cover;
+  }
+
+  .museum04 {
+    background: url(../image/image_taichung_pc/museum04_pc.jpg) no-repeat center center/cover;
+  } */
+
+  /* --- 【media Queries 768】section.museumここまで --- */
+
+  /* --- 【media Queries 768】section.sweetsここから --- */
+  /* 宮原眼科 部分 */
+
+  .sweetsItem_01 p {
+    width: 32vw;
+    /* padding-left: 53px;
+    padding-right: 53px; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  li.sweetsItem_02 h2 {
+    font-size: 2.25rem;
+    padding-top: 5px;
+    /* padding-left: 4vw; */
+  }
+
+  .sweetsItem_01 p.text18 {
+    font-size: 1.125rem;
+    line-height: 1.8rem;
+    padding: 16px 50px;
+    margin-left: 25.5vw;
+    margin-top: 5px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  .sweetsItem_06 p.text18 {
+    font-size: 1.125rem;
+    line-height: 1.7rem;
+    width: 85%;
+    margin: 1px auto;
+    padding: 14px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    /* letter-spacing: -0.03rem; */
+  }
+
+  .sweetsItem_10 p.text18 {
+    font-size: 1.125rem;
+    line-height: 1.7rem;
+    width: 80%;
+    /* margin: 1px auto; */
+    margin-top: 115px;
+    margin-right: 55px;
+    margin-left: auto;
+    padding: 18px 8px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    /* align-self: center; */
+  }
+
+
+
+  /* --- 【media Queries 768】sweets写真部分grid --- */
+  .gridWrapper {
+    /* padding-left: 3px;
+    padding-right: 3px; */
+    width: 100%;
+    height: 1750px;
+    display: grid;
+    /* grid-template-rows: 6.7% 8.5% 17.5% 11% 21.5% 11.7% 11.7% 9.6%; */
+    /* grid-template-columns: 48% 13px 11px 45%; */
+    grid-template-rows: 6% 12.5% 20.5% 17.5% 22% 20%;
+    grid-template-columns: 48% 13px 11px 45%;
+    grid-template-columns: 49% 11px 11px 49%;
+  }
+
+  .sweetsItem_01 {
+    text-align: center;
+    grid-column: 1/5;
+    grid-row: 2/3;
+  }
+
+  .sweetsItem_02 {
+    grid-column: 1/5;
+    grid-row: 1/2;
+    text-align: center;
+  }
+
+  .sweetsItem_04 {
+    grid-column: 4/5;
+    grid-row: 5/7;
+    background: url(../image/image_taichung_pc/sweets04_pc.jpg) no-repeat right bottom/contain;
+    background-size: 94%;
+    margin-left: 60px;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1060px;
+    transform: translateY(0.5vw);
+  }
+
+  .sweetsItem_06 {
+    grid-column: 4/5;
+    grid-row: 4/5;
+    padding-top: 50px;
+  }
+
+  .sweetsItem_07 {
+    grid-column: 1/2;
+    grid-row: 3/5;
+    background: url(../image/image_taichung_pc/sweets01_pc.jpg) no-repeat left top/contain;
+    margin-top: 6px;
+    margin-left: 6px;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 924px;
+  }
+
+
+  .sweetsItem_08 {
+    grid-column: 4/5;
+    grid-row: 3/4;
+    /* transform: translateX(-4px); */
+    /* margin-bottom: 5px; */
+    background: url(../image/image_taichung_pc/sweets02_pc.jpg) no-repeat center top/contain;
+    background-size: 98%;
+    margin-top: 5px;
+    margin-left: 6px;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1150px;
+  }
+
+  .sweetsItem_09 {
+    grid-column: 1/2;
+    grid-row: 6/7;
+    transform: translateX(-4px);
+    margin-top: 5px;
+    background: url(../image/image_taichung_pc/sweets03_pc.jpg) no-repeat right bottom/contain;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1080px;
+  }
+
+  .sweetsItem_10 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+
+  /* footer */
+  section.sweets {
+    margin-bottom: 150px;
+  }
+
+
+  /* --- 【media Queries 768】section.sweetsここまで --- */
+
+  /* ----- tutti 制作ここまで ----- */
+
+  /* ------ ↓共通部分 微調整ここから ------ */
+  /* ------------------------------------
+  共通部分
+  ---------------------------------------- */
+  /* main section {
+    margin-left: 0px;
+    margin-right: 0px;
+  } */
+
+  /*----------------------------------------------------------------
+             page_top  PC
+   ---------------------------------------------------------------- */
+  .page_top {
+    /* padding: 3.5% 2% 1.5% 2%; */
+    /*TOP・台北*/
+    padding: 5.5% 1% 1.5% 2%;
+    /*↑台南・台中用*/
+    /* page_topとpage_top areaを台南・台中のときは各cssファイルで上書き設定してください */
+  }
+
+  /* -----------------------------------------------------------
+page_top area
+--------------------------------------------------------------- */
+  .btn {
+    padding: 15px 0;
+    font-size: var(--font-h2-);
+    width: 301px;
+    /* margin: 5% auto 0%; */
+    margin: 3% auto 0%;
+    /* ↑台南 ・台中用*/
+    /* page_topとpage_top areaを台南・台中のときは各cssファイルで上書き設定してください */
+  }
+
+  /* ------ ↑共通部分 微調整ここまで ------ */
+}
+
+/* ---@media screen and (min-width: 768px)ここまで--- */
+/*media Queries 1100
+----------------------------------------------------*/
+@media screen and (min-width: 1100px) {
+  .colorBox_04 {
+    width: 40vw;
+    left: 50.2vw;
+  }
+}
+
+/* ---@media screen and (min-width: 1100px)ここまで--- */

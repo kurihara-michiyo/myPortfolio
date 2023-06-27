@@ -1,0 +1,977 @@
+@charset "utf-8";
+
+/* ----------------------------------------------------
+共通 
+---------------------------------------------------------*/
+
+
+:root {
+  --rectangle1-: #0180BE;
+  --rectangle2-: #007AB7;
+  --rectangle3-: #DA5019;
+  --rectangle4-: #000000;
+  --rectangle5-: #F4F4F4;
+  --rectangle6-: #FFFFFF;
+  --rectangle7-: #EDA184;
+  --rectangle9-: #1F91BE;
+  --rectangle11-: #6CBAD8;
+  --rectangl10-: #FBE481;
+  --rectangle12-: #64C99B;
+  --rectangle8-: #D9D9D9;
+
+  --font-famiry-: 'Zen Kaku Gothic New', sans-serif;
+  /* -- 【memo】1rem=16pxです -- */
+  --font-h2-: 24px;
+  --font-h3-: 20px;
+  --font-h4-: 32px;
+  /* -- ↑tainan_Gourmet -- */
+  --font-h5-: 14px;
+  --font-text-: 12px;
+  --font-mini-: 10px;
+  --font-standard-: 16px;
+  /* --ﾌｫﾝﾄｻｲｽﾞの入力例--
+    -----12pxを指定したいとき-----
+     font-size: var(--font-text-);
+     */
+}
+
+/* これはあとで消すとこ↓ */
+/* main {
+  height: 4953px;
+} */
+
+
+/*----------------------------------------
+ 背景画像
+ ----------------------------------------- */
+
+header {
+  background: url(../image/image_tainan_sp/tainan_hero_sp.jpg) no-repeat;
+  background-size: cover;
+}
+
+/*------------------------------------------------------------------
+ 背景テキスト
+ ------------------------------------------------------------------- */
+.tilte_text {
+  /* ここからはそれぞれのcssでテキスト位置設定必要 */
+  bottom: 77px;
+  right: 20px;
+  /* ---ここまで---- */
+}
+
+
+/* -------------------------------------------------------
+メニューボタン :他ページ共通
+--------------------------------------------------------*/
+.nav_bar {
+  display: flex;
+  justify-content: end;
+  /* ↓他ページのヘッダー */
+  justify-content: space-between;
+
+}
+
+/* ---------------------------
+パンくず
+ ---------------------------*/
+.breadcrumb {
+  /* 背景色は各ページで設定 */
+  background: rgba(100, 201, 155, 0.2);
+  /* ----------------------------- */
+
+}
+
+
+
+/* ----- tutti 制作ここから ----- */
+/* --- レイアウト微調整用 --- */
+.paddingTop3 {
+  padding-top: 3px;
+}
+
+/* sp版_Y軸_微調整 */
+.transY13 {
+  transform: translateY(-13px);
+}
+
+/* ----- 微調整marginBtm ----- */
+.marginBtm18 {
+  margin-bottom: 18px;
+}
+
+/* .marginTop25 {
+  margin-top: 25px;
+} */
+
+/* --- pc版のみ表示したい --- */
+.none_sp {
+  display: none;
+}
+
+.none_sp_m {
+  display: none;
+}
+
+/* --- ★attraction_spここから -----*/
+
+/* Attraction grid 枠部分 */
+div.att_Cont {
+  width: 100%;
+  position: relative;
+  height: 1470px;
+  display: grid;
+  grid-template-rows: 15% 14% 12% 5% 7.7% 14.8% 14% 12.1% 5%;
+  grid-template-columns: 100%;
+}
+
+/* --- 背景色の配置 --- */
+.colorBox_01,
+.colorBox_03 {
+  position: absolute;
+  /* background-color: rgba(237, 161, 132, 0.2); */
+  background-color: rgba(100, 201, 155, 0.2);
+  width: 77.5vw;
+  height: 318px;
+  padding: 5px;
+}
+
+.colorBox_01 {
+  z-index: -10;
+  right: 0px;
+  top: 110px;
+}
+
+.colorBox_03 {
+  z-index: -30;
+  left: 0px;
+  top: 895px;
+}
+
+.colorBox_02,
+.colorBox_04 {
+  position: absolute;
+  /* background-color: rgba(237, 161, 132, 0.2); */
+  background-color: rgba(100, 201, 155, 0.2);
+  width: 100%;
+  height: 54px;
+  left: 0px;
+  padding: 5px;
+}
+
+.colorBox_02 {
+  top: 603px;
+  z-index: -20;
+}
+
+.colorBox_04 {
+  top: 1390px;
+  z-index: -40;
+}
+
+/* Attraction grid内部配置 */
+/* photo */
+.att_01 {
+  background: url(../image/image_tainan_sp/attraction01_sp.jpg) no-repeat left bottom/cover;
+  height: 218px;
+  width: 87%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+  position: relative;
+  /* grid */
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.att_title_L {
+  background-color: #FFF;
+  letter-spacing: 8px;
+  padding-left: 10px;
+  width: 159px;
+  height: 35px;
+  position: absolute;
+  top: -20px;
+  left: -1px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.att_02 {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.att_02 p {
+  width: 75%;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: 20px;
+  text-align: center;
+  /* ↓100vw=375pxの時17.12px */
+  /* line-height: 1.07rem; */
+  line-height: 4.5vw;
+  /* letter-spacing: 1px; */
+}
+
+.att_03 {
+  grid-column: 1/2;
+  grid-row: 3/4;
+  background: url(../image/image_tainan_sp/attraction02_sp.jpg) no-repeat center center/cover;
+  background-size: 82%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+}
+
+.att_04 {
+  grid-column: 1/2;
+  grid-row: 4/5;
+}
+
+.att_04 p {
+  width: 75%;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1.07rem;
+}
+
+.att_05 {
+  grid-column: 1/2;
+  grid-row: 5/6;
+  margin-top: 30px;
+}
+
+.att_06 {
+  grid-column: 1/2;
+  grid-row: 6/7;
+  background: url(../image/image_tainan_sp/attraction03_sp.jpg) no-repeat right center/cover;
+  position: relative;
+  height: 218px;
+  width: 100%;
+  background-size: 89%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+}
+
+
+.att_title_R {
+  background-color: #FFF;
+  letter-spacing: 7px;
+  padding-left: 8px;
+  width: 159px;
+  height: 35px;
+  position: absolute;
+  top: -19px;
+  right: -1px;
+  text-align: center;
+  font-weight: bold;
+  text-shadow: 2px 2px 3px #666;
+}
+
+.att_07 {
+  grid-column: 1/2;
+  grid-row: 7/8;
+}
+
+.att_07 p {
+  width: 75%;
+  margin-left: 20px;
+  margin-right: auto;
+  text-align: center;
+  /* ↓100vw=375pxの時17.12px */
+  /* line-height: 1.07rem; */
+  line-height: 4.5vw;
+  margin-top: 27px;
+}
+
+.att_08 {
+  grid-column: 1/2;
+  grid-row: 8/9;
+  background: url(../image/image_tainan_sp/attraction04_sp.jpg) no-repeat center center/cover;
+  background-size: 82%;
+  /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+  max-width: 660px;
+}
+
+.att_09 {
+  grid-column: 1/2;
+  grid-row: 9/10;
+}
+
+.att_09 p {
+  width: 100%;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 1.07rem;
+}
+
+/* --- ★attraction_spここまで -----*/
+
+
+
+
+
+/* ---------------------------
+ ↓★ここからtutti追加部分
+ ---------------------------*/
+/* ---------------------------
+ section.gourmet
+ ---------------------------*/
+section.gourmet {
+  padding: 0px;
+  margin-bottom: 48px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.intro {
+  padding: 3px 3px 1px;
+  letter-spacing: 0px;
+  line-height: 1.4rem;
+}
+
+.gourmetCont {
+  width: 100%;
+}
+
+.gourmetShop01,
+.gourmetShop02,
+.gourmetShop03,
+.gourmetShop04 {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 20px 6px 20px;
+  margin-bottom: 5px;
+  height: 130px;
+  width: 100%;
+  /* 文字を前面に */
+  position: relative;
+}
+
+.gourmetShop_L {
+  width: 145px;
+  height: 118px;
+  /* ﾒﾆｭｰ写真文字を前面に */
+  position: absolute;
+  left: 20px;
+  z-index: 10;
+}
+
+.gourmetShop_R {
+  /* 仮数値 */
+  /* width: calc(100%-145px); */
+  width: 58%;
+  height: 118px;
+  text-align: center;
+  margin-top: 15px;
+  text-shadow: 1px 1px 1px #FFF;
+  /* 文字を前面に */
+  position: absolute;
+  left: 168px;
+  z-index: 10;
+}
+
+div.gourmetShop03 div.gourmetShop_R {
+  /* 文字を前面に */
+  position: absolute;
+  /* left: 168px; */
+  left: 165px;
+  z-index: 10;
+}
+
+div.gourmetShop04 div.gourmetShop_R {
+  /* 文字を前面に */
+  position: absolute;
+  /* left: 168px; */
+  left: 170px;
+  z-index: 10;
+}
+
+/* textをセンター配置にしたい */
+.gourmetShop_R h3 {
+  margin-bottom: 10px;
+}
+
+.gourmetShop_R h4 {
+  margin-bottom: 3px;
+}
+
+.gourmetCont h5 {
+  text-align: center;
+  padding: 0 5px;
+  line-height: 1.25rem;
+}
+
+h5.normal {
+  margin: 20px 60px;
+}
+
+h5.special01 {
+  letter-spacing: 0;
+  margin: 20px 60px;
+  transform: translateX(9px);
+  padding: 0;
+}
+
+h5.special02 {
+  letter-spacing: 0;
+  margin: 21px 30px 23px 45px;
+}
+
+div.transY02 {
+  transform: translateY(2px);
+}
+
+/* 背景画像を薄くする */
+/* .gourmetShop03::after, */
+/* .gourmetShop04::after, */
+.gourmetShop01::after,
+.gourmetShop02::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  transform: translateX(-20px);
+  top: 0;
+}
+
+/* 背景画像 */
+.gourmetShop01 {
+  background: url(../image/image_tainan_pc/gourmet01_pc.jpg) no-repeat center center/cover;
+}
+
+.gourmetShop01 .gourmetShop_L {
+  background: url(../image/image_tainan_sp/gourmet01_sp.jpg) no-repeat center center/cover;
+}
+
+.gourmetShop02 {
+  background: url(../image/image_tainan_pc/gourmet03_pc.jpg) no-repeat center center/cover;
+  background-size: 100% 100%;
+}
+
+.gourmetShop02 .gourmetShop_L {
+  background: url(../image/image_tainan_sp/gourmet02_sp.jpg) no-repeat center center/cover;
+}
+
+.gourmetShop03 {
+  /* background: url(../image/image_tainan_pc/gourmet05_pc.jpg) no-repeat center center/cover; */
+  background: url(../image/image_tainan_sp/gourmet05_sp.jpg) no-repeat center center/cover;
+}
+
+.gourmetShop03 .gourmetShop_L {
+  background: url(../image/image_tainan_sp/gourmet03_sp.jpg) no-repeat center center/cover;
+}
+
+.gourmetShop04 {
+  background: url(../image/image_tainan_sp/gourmet07_sp.jpg) no-repeat center center/cover;
+}
+
+.gourmetShop04 .gourmetShop_L {
+  background: url(../image/image_tainan_sp/gourmet04_sp.jpg) no-repeat center center/cover;
+}
+
+/* ---------------------------
+ ↑★ここまでtutti追加部分
+ ---------------------------*/
+
+/* ----- ★★★0621 tutti 追加ここから ----- */
+
+/* PickUp grid 枠部分 */
+.pickUp_Cont {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  /* ★仮の高さ 後で調整 */
+  height: 1000px;
+  display: grid;
+  grid-template-rows: 10% 17% 12% 8% 7% 20% 9% 11%;
+  grid-template-columns: 46% 54%;
+}
+
+/* pickUp grid内部配置 */
+.pickUp_01 {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  width: 100%;
+}
+
+.pickUp_01 p.text12 {
+  width: 65vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.pickUp_02 {
+  grid-column: 1/3;
+  grid-row: 2/3;
+  background: url(../image/image_tainan_sp/pickup01_sp.jpg) no-repeat center bottom/cover;
+  background-size: 65%;
+  margin-bottom: 5px;
+}
+
+.pickUp_03 {
+  grid-column: 1/3;
+  grid-row: 3/4;
+  padding-top: 10px;
+}
+
+.pickUp_03 p {
+  width: 65vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.pickUp_04 {
+  grid-column: 1/3;
+  grid-row: 4/5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pickUp_04 img {
+  width: 30%;
+}
+
+.pickUp_05 {
+  grid-column: 1/3;
+  grid-row: 5/6;
+}
+
+.pickUp_05 p {
+  width: 65vw;
+  margin: 15px auto 0px;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.pickUp_06 {
+  grid-column: 1/2;
+  grid-row: 6/7;
+  background: url(../image/image_tainan_sp/pickup05_sp.jpg) no-repeat left center/contain;
+}
+
+.pickUp_07 {
+  grid-column: 2/3;
+  grid-row: 6/7;
+  background: url(../image/image_tainan_sp/pickup06_sp.jpg) no-repeat right center/contain;
+}
+
+.pickUp_08 {
+  grid-column: 1/3;
+  grid-row: 7/8;
+}
+
+.pickUp_08 p {
+  width: 65vw;
+  margin: 15px auto 0px;
+  font-size: 0.75rem;
+  line-height: 1.1rem;
+}
+
+.pickUp_09 {
+  grid-column: 1/3;
+  grid-row: 8/9;
+  background: url(../image/image_tainan_sp/pickup07_sp.jpg) no-repeat center center/contain;
+}
+
+/* textBorder sp版_Y軸_微調整 */
+.transY18 {
+  transform: translateY(-18px);
+}
+
+/* ----- ★★★0621 tutti 追加ここまで ----- */
+
+
+
+
+
+/*media Queries 768
+----------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+
+  /* ------------------------------------------
+MV
+--------------------------------------------- */
+
+  /*--------------------------------------------
+ 背景画像
+ ---------------------------------------------- */
+  header {
+    background: url(../image/image_tainan_pc/tainan_hero_pc.jpg) no-repeat;
+    background-size: cover;
+  }
+
+
+
+  /* mv大きさ・位置 */
+  .pc_mv_title {
+    width: 132%;
+    height: 50%;
+  }
+
+  .mv {
+    top: 50%;
+    left: 22%;
+  }
+
+  /* テキスト部分 */
+  .tilte_text>p {
+    width: 475px;
+  }
+
+  .tilte_text {
+    bottom: 37px;
+    right: 116px;
+  }
+
+  /* ここ追加忘れずに */
+  .tilte_text>p {
+    width: 475px;
+  }
+
+  /* ----- tutti 制作ここから ----- */
+  /* ☆0617追加*/
+  /*↓commonに入れたい! title文字 ここから */
+  .title h2 {
+    font-size: clamp(1.5rem, 3.52vw, 3rem);
+    /* margin-top: 5px; */
+    margin-bottom: clamp(40px, 5.7vw, 80px);
+    margin-top: auto;
+  }
+
+  /* .subtitle,  */
+  .title p {
+    font-size: clamp(1rem, 1.77vw, 1.5rem);
+    /* margin-top: 20px; */
+    margin-bottom: clamp(40px, 5.5vw, 73px);
+    margin-top: auto;
+  }
+
+  /* .subtitle {
+  font-size: var(--font-standard-); */
+  /* margin-top: 5px; */
+  /* ↑調節のため隠す */
+  /* } */
+
+  /* ↑commonに入れたい! title文字 ここまで */
+  /* --- sp版のみ表示したい --- */
+  .none_pc {
+    display: none;
+  }
+
+  /* ---------------------------
+【media Queries 768】小見出し部分
+ ---------------------------*/
+
+  /* --- 【media Queries 768】小見出し部分 微調整 --- */
+  /* .t_transX77 {
+    transform: translateX(-77px);
+  } */
+
+  .t_transX15 {
+    transform: translateX(-15px);
+  }
+
+  .t_transX33 {
+    transform: translateX(-33px);
+  }
+
+  .t_transX5 {
+    transform: translateX(-5px);
+  }
+
+  .t_transX5_r {
+    transform: translateX(5px);
+  }
+
+
+  /* --- ★【media Queries 768】attraction_pcここから  --- */
+  /* Attraction grid 枠部分 */
+  div.att_Cont {
+    width: 100%;
+    position: relative;
+    height: 1271px;
+    display: grid;
+    grid-template-rows: 31.5% 14.5% 8% 31.5% 15%;
+    grid-template-columns: 48% 50px 45%;
+  }
+
+  /* --- 背景色の配置 --- */
+  .colorBox_01,
+  .colorBox_03 {
+    position: absolute;
+    /* background-color: rgba(237, 161, 132, 0.2); */
+    background-color: rgba(100, 201, 155, 0.2);
+    /* width: 70.0vw; */
+    height: 423px;
+  }
+
+  .colorBox_01 {
+    /* z-index: -10; */
+    width: 69vw;
+    left: 290px;
+    top: 50px;
+  }
+
+  .colorBox_03 {
+    /* z-index: -30;
+    left: 0px; */
+    width: 71vw;
+    transform: translateX(-100px);
+    top: 740px;
+  }
+
+  .colorBox_02,
+  .colorBox_04 {
+    position: absolute;
+    /* background-color: rgba(237, 161, 132, 0.2); */
+    background-color: rgba(100, 201, 155, 0.2);
+    height: 78px;
+  }
+
+  .colorBox_02 {
+    /* width: 43vw; */
+    width: 588px;
+    top: 510px;
+    /* left: -20px; */
+    transform: translateX(-100px);
+    /* z-index: -20; */
+  }
+
+  /* ↓vw:800px前後で崩れるため＠1100を設定 */
+  .colorBox_04 {
+    /* width: 41.5vw; */
+    width: 60vw;
+    /* width: 550px; */
+    top: 1200px;
+    /* left: 50.2vw; */
+    left: 35vw;
+    /* left: 690px; */
+    /* z-index: -40; */
+  }
+
+  /* Attraction grid内部配置 */
+  /* photo */
+  .att_01 {
+    background: url(../image/image_tainan_pc/attraction01_pc.jpg) no-repeat left top/cover;
+    height: 398px;
+    width: 100%;
+    background-size: 98%;
+    margin-top: 3px;
+    margin-left: 8px;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1066px;
+    position: relative;
+    /* grid */
+    grid-column: 1/2;
+    grid-row: 1/2;
+    /* transform: translateX(-10px); */
+  }
+
+  .att_title_L {
+    letter-spacing: 11px;
+    padding-left: 12px;
+    padding-top: 10px;
+    width: 220px;
+    height: 60px;
+    position: absolute;
+    font-size: 2.25rem;
+    top: -1px;
+    /* left: 100px; */
+  }
+
+  .att_02 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    width: 100%;
+  }
+
+
+  .att_02 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    /* line-height: 1.65rem; */
+    line-height: clamp(20px, 1.93vw, 1.65rem);
+    margin-top: 85px;
+    /* margin-left: 55px; */
+    margin-left: 4.2vw;
+    /* margin-right: 55px; */
+    width: 82%;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 18px 10px;
+    /* letter-spacing: 1.3px; */
+  }
+
+  .att_03 {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background: url(../image/image_tainan_pc/attraction02_pc.jpg) no-repeat left bottom/cover;
+    /* background-size: 86.5%; */
+    background-size: 100%;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1010px;
+    margin-left: 5px;
+    /* margin-top: 10px; */
+    transform: translateY(7px);
+  }
+
+  .att_04 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+
+  .att_04 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    line-height: 1.6rem;
+    margin-top: 120px;
+    /* margin-left: 95px; */
+    /* margin-left: 48px; */
+    margin-left: 3.5vw;
+  }
+
+  .att_06 {
+    grid-column: 3/4;
+    grid-row: 4/5;
+    /* background: url(../image/image_taichung_pc/attraction03_pc.jpg) no-repeat center center/cover; */
+    background: url(../image/image_tainan_pc/attraction03_pc.jpg) no-repeat center top/cover;
+    position: relative;
+    height: 100%;
+    width: 39.5vw;
+    /* margin-left: 30px; */
+    margin-left: 35px;
+    transform: translateY(5px);
+    background-size: 99%;
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1060px;
+  }
+
+
+  .att_title_R {
+    letter-spacing: 11px;
+    padding-left: 5px;
+    padding-top: 10px;
+    width: 225px;
+    height: 60px;
+    font-size: 2.25rem;
+    top: -1px;
+    right: -1px;
+  }
+
+  .att_07 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+
+  .att_07 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    line-height: 1.6rem;
+    /* width: 65%; */
+    width: 75%;
+    padding: 20px 0;
+    /* margin-top: 110px; */
+    /* margin-left: 175px; */
+    margin-top: 115px;
+    /* margin-left: 95px; */
+    margin-left: 7vw;
+    border-top: 0.5px solid #000;
+    border-bottom: 0.5px solid #000;
+  }
+
+
+
+  .att_08 {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    background: url(../image/image_tainan_pc/attraction04_pc.jpg) no-repeat right bottom/cover;
+    /* background-size: 80%; */
+    background-size: 93%;
+    margin-top: 16px;
+    transform: translateX(9px);
+    /* 最大幅max-with＝画像幅 ÷ background-sizeの％ */
+    max-width: 1010px;
+  }
+
+  .att_09 {
+    grid-column: 3/4;
+    grid-row: 5/6;
+  }
+
+  .att_09 p {
+    /* font-size: 1.125rem; */
+    font-size: clamp(12px, 1.33vw, 18px);
+    line-height: 1.6rem;
+    margin-top: 125px;
+    /* margin-left: 25px; */
+    /* margin-left: 75px; */
+    margin-left: 5.5vw;
+    /* letter-spacing: 1.1px; */
+  }
+
+  .height_01 {
+    height: 45px;
+  }
+
+  /* --- ★【media Queries 768】attraction_pcここまで --- */
+
+
+  /* ------ ↓共通部分 微調整ここから ------ */
+  /* ------------------------------------
+  共通部分
+  ---------------------------------------- */
+  main section {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  /*----------------------------------------------------------------
+             page_top  PC
+   ---------------------------------------------------------------- */
+  .page_top {
+    /* padding: 3.5% 2% 1.5% 2%; */
+    /*TOP・台北*/
+    padding: 5.5% 1% 1.5% 2%;
+    /*↑台南・台中用*/
+    /* page_topとpage_top areaを台南・台中のときは各cssファイルで上書き設定してください */
+  }
+
+  /* -----------------------------------------------------------
+page_top area
+--------------------------------------------------------------- */
+  .btn {
+    padding: 15px 0;
+    font-size: var(--font-h2-);
+    width: 301px;
+    /* margin: 5% auto 0%; */
+    margin: 3% auto 0%;
+    /* ↑台南 ・台中用*/
+    /* page_topとpage_top areaを台南・台中のときは各cssファイルで上書き設定してください */
+  }
+
+  /* ------ ↑共通部分 微調整ここまで ------ */
+
+}
+
+/* ---@media screen and (min-width: 768px)ここまで--- */
+
+
+
+/*media Queries 1100
+----------------------------------------------------*/
+@media screen and (min-width: 1100px) {
+  .colorBox_04 {
+    width: 40vw;
+    left: 50.2vw;
+  }
+}
+
+/* ---@media screen and (min-width: 1100px)ここまで--- */
