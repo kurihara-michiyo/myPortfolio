@@ -1,0 +1,320 @@
+@charset "utf-8";
+
+:root {
+  --rectangle1-: #FFD233;
+  --rectangle2-: #B392AC;
+  --rectangle3-: #7F5539;
+  --rectangle4-: #D27C2C;
+  --rectangle5-: #EDE0D4;
+  --rectangle6-: #CCCCCC;
+  --rectangle7-: #D9D9D9;
+  --rectangle8-: #BF0000;
+  --rectangle10-: #000000;
+  --rectangl11-: #E6CCB2;
+  --rectangle12-: #E8C2CA;
+  --rectangle13-: #F7D1CD;
+  --rectangle13-: #FF8877;
+
+  --font-family-: 'Noto Sans JP', sans-serif;
+
+}
+
+
+
+img {
+  width: 100%;
+}
+
+
+
+/* -----------------------------------------
+                gest_name
+-------------------------------------------- */
+.gest_name {
+  font-size: 12px;
+  padding: 3% 6%;
+  border-bottom: 1px solid var(--rectangle3-);
+}
+
+/* -----------------------------------------
+              mv
+-------------------------------------------- */
+.mv {
+  background: url(../../common/images/sp_img/sp_hero.jpg) no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+}
+
+/* -----------------------------------
+          select_menu
+------------------------------------- */
+.select_menu {
+  margin: 7% 6%;
+  display: grid;
+  grid-template-columns: 47% 47%;
+  grid-template-rows: 50% 20%;
+  column-gap: 7%;
+  row-gap: 23%;
+}
+
+.select_item:nth-child(1) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  position: relative;
+}
+
+.select_item:nth-child(2) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.select_item:nth-child(3) {
+  grid-column: 1/3;
+  grid-row: 2/3;
+}
+
+/* 新商品アイコン */
+.select_item:nth-child(1)::after {
+  content: url(../images/sp_img/newicon.svg);
+  position: absolute;
+  /* width: 100%; */
+  top: 1%;
+  left: 1%;
+}
+
+
+/* -----------------------------------
+            image_section
+------------------------------------- */
+.image_section {
+  padding-top: 3%;
+}
+
+.Philosophy {
+  height: 568px;
+  background: url(../images/sp_img/sp_Philosophy.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+/* -----------------------------------
+            ランキング
+------------------------------------- */
+.ranking {
+  padding-top: 10%;
+  padding-bottom: 48%;
+}
+
+.ranking>.menu-items {
+  padding-top: 13%;
+  row-gap: 4%;
+}
+
+
+.title::after {
+  width: 38%;
+}
+
+/* 余白 */
+form {
+  margin-top: 21%;
+}
+
+/* レイアウト */
+.menu-items {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 5%;
+  row-gap: 7%;
+  padding: 0 7%;
+}
+
+/* 文字中央寄せ */
+.menu-item {
+  text-align: center;
+}
+
+/* 画像余白 */
+.menu-item>a>img {
+  margin-top: 15%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+/* ランキング数字・色 */
+.cube {
+  display: inline-block;
+  color: #fff;
+  font-weight: bold;
+  background-color: var(--rectangle12-);
+  padding: 5% 8%;
+}
+
+/* 1 */
+.no-1 {
+  background-color: var(--rectangle1-);
+}
+
+/* 2 */
+.no-2 {
+  background-color: rgba(204, 204, 204, 1);
+}
+
+/* 3 */
+.no-3 {
+  background-color: var(--rectangle4-);
+}
+
+
+
+
+/* ドーナツタイトル */
+.menu-item-name {
+  color: var(--rectangle3-);
+  text-align: left;
+  padding-top: 17%;
+  font-weight: 500;
+  line-height: 25.6px;
+}
+
+.menu-item-name:hover {
+  color: var(--rectangle8-);
+}
+
+.price {
+  text-align: left;
+  margin-top: 9%;
+  color: var(--rectangle8-)
+}
+
+.cart_btn {
+  text-align: center;
+  margin-top: 11%;
+  width: 90%;
+  font-size: 12px;
+  color: #fff;
+  background-color: var(--rectangle3-);
+  padding: 7% 0;
+}
+
+
+
+
+
+
+
+
+/*media Queries 768
+-------------------------------------------------------------------------------*/
+@media screen and (min-width: 768px) {
+
+  /* -----------------------------------------
+                gest_name PC
+-------------------------------------------- */
+  .gest_name {
+    font-size: 12px;
+    padding: 1% 8%;
+    border-bottom: 1px solid var(--rectangle3-);
+  }
+
+
+  .mv {
+    height: 77vh;
+  }
+
+  /* -----------------------------------
+          select_menu
+------------------------------------- */
+  .select_menu {
+    margin: 7% 12%;
+    grid-template-columns: 47% 47%;
+    grid-template-rows: 50% 20%;
+    column-gap: 7%;
+    row-gap: 23%;
+  }
+
+  /* 新商品 */
+  .select_item:nth-child(1)::after {
+    top: 16%;
+    left: 12%;
+    transform: scale(3.5);
+  }
+
+
+  /* -----------------------------------
+            image_section
+------------------------------------- */
+
+  .Philosophy {
+    height: 661px;
+    background: url(../images/pc_img/pc_donuts_img.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* -----------------------------------
+            ランキング PC
+------------------------------------- */
+  .ranking {
+    padding-top: 8%;
+    padding-bottom: 17%;
+  }
+
+  .ranking>.title::after {
+    width: 16%;
+    right: 42%;
+  }
+
+  .ranking>.menu-items {
+    padding-top: 7%;
+    row-gap: 7%;
+  }
+
+
+  /* レイアウト */
+  .menu-items {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 6%;
+    row-gap: 8%;
+    padding: 0px 11%;
+  }
+
+  .menu-item>a>img {
+    margin-top: 8%;
+  }
+
+  .cube {
+    padding: 6% 8%;
+  }
+
+  /* form余白 */
+  form {
+    margin-top: 10%;
+  }
+
+  /* ボタン */
+  .cart_btn {
+    width: 81%;
+    padding: 5% 0;
+    font-size: 20px;
+    margin-top: 6%;
+  }
+
+  /* 文字サイズ */
+  .menu-item-name {
+    padding-top: 9%;
+    font-weight: 500;
+    line-height: 29.6px;
+  }
+
+  .price,
+  .menu-item-name {
+    font-size: 24px;
+  }
+
+}
